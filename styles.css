@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+body{
+    background-image: url("./assets/img/81-817751_quiz-time-announcement-poster-neon-signboard-vector-quiz.webp");
+    color:white;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    min-height: 110vh;
+    font-family: "Audiowide", sans-serif;
+}
+.stylebody{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color:lightslategray;
+    padding:1.5rem 4rem 3rem 4rem;
+    width: 600px;
+    height:680px;
+    border-top-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+    box-shadow: 0 5px 9px rgb(0 0 0)
+}
+.title{
+    text-align: center;
+    font-size:2rem;
+}
+li{
+    list-style: none;
+
+}
+button{
+    background-color: #03cae4;
+    color: #fff;
+    border: none;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-family: inherit;
+    padding: 1.3rem;
+  }
+button:hover{
+    background-color: #04adc4;
+  }
+  button:focus{
+    outline: none;
+    background-color: #44b927;
+  }
