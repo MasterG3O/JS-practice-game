@@ -7,14 +7,10 @@
     font-size: large;
   }
   
-  :root {
-    --hue-neutral: 200;
-    --hue-wrong: 0;
-    --hue-correct: 145;
-  }
-  
+ 
   body {
-    --hue: var(--hue-neutral);
+   background-image: url("./assets/img/81-817751_quiz-time-announcement-poster-neon-signboard-vector-quiz.webp");
+    font-family: "Audiowide", sans-serif;
     padding: 0;
     margin: 0;
     display: flex;
@@ -22,14 +18,13 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: hsl(var(--hue), 20%, 50%);
+  
   }
   
   body.correct {
-    --hue: var(--hue-correct);
+    background-image: url("./assets/img/correct-rubber-stamp-word-correct-inside-illustration-109025952.jpeg");
   }
   
   body.wrong {
-    --hue: var(--hue-wrong);
+   background-image: url("./assets/img/wrong-or-wrongly\ \(3\).jpeg"); 
   }
-  .btn{visibility:hidden}
