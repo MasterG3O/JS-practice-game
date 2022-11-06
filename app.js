@@ -36,7 +36,7 @@ const questions = [ //this object i will use to pick out the questions and answe
     {
         question:'The expression 8 >= 8 evaluates to',
         answers: [
-            {text: 'True', correct: true },
+            {text: 'False', correct: true },
           {text: 'True', correct: false },
         ]
     },
@@ -57,35 +57,7 @@ const questions = [ //this object i will use to pick out the questions and answe
         {text: 'while i = 1 to 10', correct: false },
       ]
   },
-  {
-    question:'How can you add a comment in a JavaScript?',
-    answers: [
-      {text: '//This is a comment ', correct: true },
-      {text: "'This is a comment'", correct: false },
-      {text: '<!--This is a comment-->', correct: false },
-     
-    ]
-},
-{
-  question:'JavaScript is the same as Java.',
-  answers: [
-    {text: 'True ', correct: false },
-    {text: "False", correct: true },
-    {text: '<!--This is a comment-->', correct: false },
-   
-  ]
-},
-{
-  question:'Which event occurs when the user clicks on an HTML element?',
-  answers: [
-    {text: 'onmouseclick ', correct: false },
-    {text: 'onmouseover', correct: false },
-    {text: 'onclick  ', correct: true },
-    {text: 'oonchange', correct: false },
-  ]
-},
 ]
-
 
 //created variable of  everything that i will need buttons
 let startButton = document.getElementById('start-btn')
@@ -96,6 +68,7 @@ let questionElement = document.getElementById('question')
 let answerButtonsElement = document.getElementById('answer-buttons')
 
 let shuffledQuestions, currentQuestionIndex 
+let h2 = document.getElementsByClassName('title')
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -109,15 +82,31 @@ function startGame() { //at the start of the game one the start button is clicke
   shuffledQuestions = questions.sort(() => Math.random() - .5)
 // console.log(shuffledQuestions)
   currentQuestionIndex = 0
- 
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
 }
+function play() {   
+  var beepsound = new Audio(   
+    'https://www.soundjay.com/buttons/sounds/button-17.mp3');   
+  beepsound.play();   
+}   
+function playnext() {   
+  var beepsound = new Audio(src="https://www.soundjay.com/buttons/sounds/button-32.mp3")
+  beepsound.play();   
+}   
+
+function buzzer(){
+  var beepsound = new Audio(   
+    'https://www.soundjay.com/misc/sounds/fail-buzzer-02.mp3');   
+  beepsound.play();   
+}   
+
+
 function showQuestion(question) { //function shows question and hidens the next button if nothing is answered
   questionElement.innerText = question.question
   question.answers.forEach(answer => { // getting an error here not to sure why
     const button = document.createElement('button')
-  console.log(button)
+  console.log(button) 
     button.innerText = answer.text
     button.classList.add('btn')
     if (answer.correct) {
@@ -152,11 +141,15 @@ function selectAnswer(e) {
    
     setStatusClass(button, button.dataset.correct)
   })
+  
   if (shuffledQuestions.length > currentQuestionIndex + 1) { //hide button 
     nextButton.classList.remove('hide')
+    
   } else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
+    
+    startButton.innerText = 'Restart'//CHANGE TO RESTART
+    startButton.classList.remove('hide');
+    
   }
 }
 
@@ -167,9 +160,13 @@ function setStatusClass(element, correct) {
  
   if (correct) {
     element.classList.add('correct')
+    console.log("answer is correct ")
+   
   }  
   else {
     element.classList.add('wrong')
+    console.log('answer is incorrect')
+    
   }
 }
 
