@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Audiowide");
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -60,9 +61,12 @@
  .btn:hover{
     color:goldenrod;
  }
-.quiz-title{
+.title{
+  
     text-align: center;
     font-size: 2rem;
+   
+    
 }
 
 #question {
@@ -116,8 +120,9 @@
     color:white;
 } */
 body.correct {
+
     background-image: url("./assets/img/correct-rubber-stamp-word-correct-inside-illustration-109025952.jpeg");
-    ;
+ 
   }
   
   body.wrong {
