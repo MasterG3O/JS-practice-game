@@ -77,8 +77,23 @@
 .start-btn{
   margin-top: 200px;
   font-size: larger;
+}@keyframes glowing {
+  0% {
+    background-color: #d3f431;
+    box-shadow: 0 0 5px #2ba805;
+  }
+  50% {
+    background-color: #708869;
+    box-shadow: 0 0 20px #bc04b6;
+  }
+  100% {
+    background-color: #0caffb;
+    box-shadow: 0 0 5px #e600ff;
+  }
 }
-
+.start-btn{
+  animation: glowing 13ms infinite;
+}
 .controls{
     /* border:1px solid black; */
     display: flex;
