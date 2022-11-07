@@ -14,7 +14,7 @@
  ```
 
 
-# BUGS/ERRORS: 
+## BUGS/ERRORS: 
 ```bash
   1st bug to get a hold of is the next button, i want to "disable it" until the correct answer is chosen.
 
