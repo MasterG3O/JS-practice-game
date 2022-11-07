@@ -66,9 +66,8 @@ let nextButton = document.getElementById('next-btn')
 let questionContainerElement = document.getElementById('question-container')
 let questionElement = document.getElementById('question')
 let answerButtonsElement = document.getElementById('answer-buttons')
-
 let shuffledQuestions, currentQuestionIndex 
-let h2 = document.getElementsByClassName('title')
+let title = document.getElementById('title') 
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -76,31 +75,6 @@ nextButton.addEventListener('click', () => {
   setNextQuestion()
   console.log(setNextQuestion)
 })
-
-function startGame() { //at the start of the game one the start button is clicked it will hide and 
-  
-  startButton.classList.add('hide')
-  shuffledQuestions = questions.sort(() => Math.random() - .5)
-// console.log(shuffledQuestions)
-
-  currentQuestionIndex = 0
-  questionContainerElement.classList.remove('hide')
-  setNextQuestion()
-
-  var count = 30;
-var interval = setInterval(function(){
-  document.getElementById('count').innerHTML=count;localStorage
-  count--;
-  if (count === 0){
-    clearInterval(interval);
-    document.getElementById('count').innerHTML='Done';
-    location.reload();
-    // or...
-    alert("You're out of time! TRY AGAIN (:");
-  }
-}, 1000);
-}
-
 function play() {   
   var beepsound = new Audio(   
     'https://www.soundjay.com/buttons/sounds/button-17.mp3');   
@@ -116,13 +90,65 @@ function buzzer(){
     'https://www.soundjay.com/misc/sounds/fail-buzzer-02.mp3');   
   beepsound.play();   
 }   
+function applause(){
+  var beepsound = new Audio(   
+    'https://www.soundjay.com/human/sounds/applause-6.mp3');   
+  beepsound.play();   
+}   
+function finished() {
+  // var myDiv = document.getElementById("GFG");
+  // var button = document.createElement('BUTTON');
+  // var text = document.createTextNode("Button");
+  // button.appendChild(text);
+  // myDiv.appendChild(button); ;
+questionElement.innerHTML = "YOU'RE AWESOME GOODJOB!!"
+answerButtonsElement.classList.add('hide');
+nextButton.classList.add('hide');
+
+setTimeout(function(){
+  alert('SHUFFLING NEW QUESTION RELOADING...');
+  location.reload();
+}, 1000);
+
+
+
+}
+
+function startGame() { //at the start of the game one the start button is clicked it will hide and 
+  
+  startButton.classList.add('hide')
+  shuffledQuestions = questions.sort(() => Math.random() - .5)
+// console.log(shuffledQuestions)
+
+  currentQuestionIndex = 0
+  questionContainerElement.classList.remove('hide')
+  setNextQuestion()
+
+  let count = 30;
+var interval = setInterval(function(){
+  document.getElementById('count').innerHTML=count;localStorage
+  count--;
+  if (count === 0){
+    clearInterval(interval);
+    applause();
+    
+    document.getElementById('count').innerHTML= 'Done!!';
+    let elementq = document.getElementById("title");
+    elementq.innerHTML = "Keep Practicing";
+    finished()
+
+    // location.reload();
+    // alert("You're out of time! TRY AGAIN (:");
+  }
+}, 1000);
+}
+
 
 
 function showQuestion(question) { //function shows question and hidens the next button if nothing is answered
   questionElement.innerText = question.question
   question.answers.forEach(answer => { // getting an error here not to sure why
     const button = document.createElement('button')
-  console.log(button) 
     button.innerText = answer.text
     button.classList.add('btn')
     if (answer.correct) {
@@ -197,3 +223,5 @@ function clearStatusClass(element) {
 // 4hide the next button until answered is shown
 // 5 once next is clicked go to the next question 
 // 6same thing until the end where it
+//add sounds
+//add timer

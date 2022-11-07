@@ -2,111 +2,127 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 @import url("https://fonts.googleapis.com/css?family=Audiowide");
 
-*, *::before, *::after {
-    box-sizing: border-box;
-    font-size: large;
-  }
-  
- 
-  body {
-   background-image: url("./assets/img/81-817751_quiz-time-announcement-poster-neon-signboard-vector-quiz.webp");
-    padding: 0;
-    margin: 0;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
-  .container {
-    width: 600px;
-   height: 800px;
-    padding: 10px;
-    background-color: lightslategray;
-    border-radius: 10px;
-  }
-  .title{
-    display: flex;
-    font-size: 2em;
-    justify-content: center;
-    font-family: "Audiowide", sans-serif;
-
-  }
-  .btn-list{
-    display: flex;
-    display:grid;
-    justify-content: center;
-    border:2px solid rgb(38, 22, 22);
-    padding: 100px;
-    margin-top: 40px;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-size: large;
 }
 
-.hide{ 
-    display: none;
-  }
- .btn{
-    background-color: rgb(63, 114, 122);
-    border-radius: 5px;
-    border-radius: 0.5rem;
-    font-weight: 700;
-    font-size: 1em;
-    margin: .5rem .5em;
-    padding: .4rem 1.2rem;
-    cursor: pointer;
-    color: var(--light-color);
-    box-shadow: 0 4px 0 0 #156fa3;
-    transition: var(--transition); 
-    opacity: 1;
- }
- .btn:hover{
-    color:goldenrod;
- }
-.title{
-  
-    text-align: center;
-    font-size: 2rem;
-   
-    
+
+body {
+  background-image: url("./assets/img/81-817751_quiz-time-announcement-poster-neon-signboard-vector-quiz.webp");
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 600px;
+  height: 800px;
+  padding: 10px;
+  background-color: lightslategray;
+  border-radius: 10px;
+}
+
+#title {
+  display: flex;
+  font-size: 2em;
+  justify-content: center;
+  font-family: "Audiowide", sans-serif;
+
+}
+
+.btn-list {
+  display: flex;
+  display: grid;
+  justify-content: center;
+  border: 2px solid rgb(38, 22, 22);
+  padding: 100px;
+  margin-top: 40px;
+}
+
+.hide {
+  display: none;
+}
+
+.btn {
+  background-color: rgb(63, 114, 122);
+  border-radius: 5px;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  font-size: 1em;
+  margin: .5rem .5em;
+  padding: .4rem 1.2rem;
+  cursor: pointer;
+  color: var(--light-color);
+  box-shadow: 0 4px 0 0 #156fa3;
+  transition: var(--transition);
+  opacity: 1;
+}
+
+.btn:hover {
+  color: goldenrod;
+}
+
+#title {
+  text-align: center;
+  font-size: 2rem;
+
+
 }
 
 #question {
-    display:flex;
-    justify-content: center;
-    font-size: 1.5em;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.next-btn{
+
+.next-btn {
   font-size: larger;
 }
-.start-btn{
+
+.start-btn {
   margin-top: 200px;
   font-size: larger;
-}@keyframes glowing {
+}
+
+@keyframes glowing {
   0% {
     background-color: #d3f431;
     box-shadow: 0 0 5px #2ba805;
   }
+
   50% {
     background-color: #708869;
     box-shadow: 0 0 20px #bc04b6;
   }
+
   100% {
     background-color: #0caffb;
     box-shadow: 0 0 5px #e600ff;
   }
 }
-.start-btn{
+
+.start-btn {
   animation: glowing 13ms infinite;
 }
-.controls{
-    /* border:1px solid black; */
-    display: flex;
-    margin-left: 170px;
-    margin-right: 170px;
-    padding-left: 20px;
-    justify-content: center;
-    
+
+.controls {
+  /* border:1px solid black; */
+  display: flex;
+  margin-left: 170px;
+  margin-right: 170px;
+  padding-left: 20px;
+  justify-content: center;
+
 }
+
 /* .quiz-score{
     text-align: right;
     font-weight: 600;
@@ -121,19 +137,20 @@
 } */
 body.correct {
 
-    background-image: url("./assets/img/correct-rubber-stamp-word-correct-inside-illustration-109025952.jpeg");
- 
-  }
-  
-  body.wrong {
-   background-image: url("./assets/img/wrong-or-wrongly\ \(3\).jpeg"); 
-  }
-  #count{
-    display: flex;
-    justify-content: center;
-    border:1px solid black;
-    height: 20px;
-    width: 60px;
-    margin-left:260px;
-    
-  }
+  background-image: url("./assets/img/correct-rubber-stamp-word-correct-inside-illustration-109025952.jpeg");
+
+}
+
+body.wrong {
+  background-image: url("./assets/img/wrong-or-wrongly\ \(3\).jpeg");
+}
+
+#count {
+  display: flex;
+  justify-content: center;
+  border: 1.5px solid black;
+  height: 24px;
+  width: 67px;
+  margin-left: 260px;
+
+}
