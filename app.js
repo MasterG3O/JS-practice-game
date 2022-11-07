@@ -78,13 +78,29 @@ nextButton.addEventListener('click', () => {
 })
 
 function startGame() { //at the start of the game one the start button is clicked it will hide and 
+  
   startButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
 // console.log(shuffledQuestions)
+
   currentQuestionIndex = 0
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
+
+  var count = 30;
+var interval = setInterval(function(){
+  document.getElementById('count').innerHTML=count;localStorage
+  count--;
+  if (count === 0){
+    clearInterval(interval);
+    document.getElementById('count').innerHTML='Done';
+    location.reload();
+    // or...
+    alert("You're out of time! TRY AGAIN (:");
+  }
+}, 1000);
 }
+
 function play() {   
   var beepsound = new Audio(   
     'https://www.soundjay.com/buttons/sounds/button-17.mp3');   

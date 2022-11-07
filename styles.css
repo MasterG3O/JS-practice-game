@@ -128,3 +128,12 @@ body.correct {
   body.wrong {
    background-image: url("./assets/img/wrong-or-wrongly\ \(3\).jpeg"); 
   }
+  #count{
+    display: flex;
+    justify-content: center;
+    border:1px solid black;
+    height: 20px;
+    width: 60px;
+    margin-left:260px;
+    
+  }
