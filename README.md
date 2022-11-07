@@ -15,9 +15,10 @@
 
 
 # bugs: 
+```bash
+ bug to get a hold of is the next button, i want to "disable it' until the correct answer is chosen.
 
-First bug to get a hold of is the next button, i want to "disable it' until the correct answer is chosen.
-
-# 2nd bug is when going till the end the start button will reload isntead of starting from the beggining 
-
+ 2nd bug is when going till the end the start button will reload isntead of starting from the beggining 
+ 
+```
 # INPIRATION-- I was looking to make something that i could build on and practice my JS skill with.
