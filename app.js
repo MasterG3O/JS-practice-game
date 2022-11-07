@@ -69,6 +69,8 @@ let answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions, currentQuestionIndex 
 let title = document.getElementById('title') 
 
+let score = 0
+
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
@@ -101,14 +103,14 @@ function finished() {
   // var text = document.createTextNode("Button");
   // button.appendChild(text);
   // myDiv.appendChild(button); ;
-questionElement.innerHTML = "YOU'RE AWESOME GOODJOB!!"
+questionElement.innerHTML = `YOU'RE AWESOME GOODJOB!! your score is: ${score}`
 answerButtonsElement.classList.add('hide');
 nextButton.classList.add('hide');
 
 setTimeout(function(){
-  alert('SHUFFLING NEW QUESTION RELOADING...');
+  alert('SHUFFLING NEW QUESTIONS RELOADING..CLICK OK.');
   location.reload();
-}, 1000);
+}, 3000);
 
 
 
@@ -124,7 +126,7 @@ function startGame() { //at the start of the game one the start button is clicke
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
 
-  let count = 30;
+  let count = 10;
 var interval = setInterval(function(){
   document.getElementById('count').innerHTML=count;localStorage
   count--;
@@ -152,7 +154,9 @@ function showQuestion(question) { //function shows question and hidens the next 
     button.innerText = answer.text
     button.classList.add('btn')
     if (answer.correct) {
+      score++
       button.dataset.correct = answer.correct
+      console.log(score)
     }
     button.addEventListener('click', selectAnswer)
     answerButtonsElement.appendChild(button)
@@ -225,3 +229,5 @@ function clearStatusClass(element) {
 // 6same thing until the end where it
 //add sounds
 //add timer
+
+console.log(score)
