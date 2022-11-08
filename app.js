@@ -65,9 +65,9 @@ let nextButton = document.getElementById('next-btn')
 
 let questionContainerElement = document.getElementById('question-container')
 let questionElement = document.getElementById('question')
+let title = document.getElementById('title') 
 let answerButtonsElement = document.getElementById('answer-buttons')
 let shuffledQuestions, currentQuestionIndex 
-let title = document.getElementById('title') 
 
 let score = 0
 
@@ -77,7 +77,7 @@ nextButton.addEventListener('click', () => {
   setNextQuestion()
   console.log(setNextQuestion)
 })
-function play() {   
+function play() {    //the sounds function
   var beepsound = new Audio(   
     'https://www.soundjay.com/buttons/sounds/button-17.mp3');   
   beepsound.play();   
@@ -87,17 +87,18 @@ function playnext() {
   beepsound.play();   
 }   
 
-function buzzer(){
+function buzzer(){ 
   var beepsound = new Audio(   
     'https://www.soundjay.com/misc/sounds/fail-buzzer-02.mp3');   
   beepsound.play();   
 }   
-function applause(){
+function applause(){ // error not working when ran
   var beepsound = new Audio(   
     'https://www.soundjay.com/human/sounds/applause-6.mp3');   
   beepsound.play();   
 }   
-function finished() {
+function finished() {  // created this function for score
+
   // var myDiv = document.getElementById("GFG");
   // var button = document.createElement('BUTTON');
   // var text = document.createTextNode("Button");
@@ -119,20 +120,20 @@ setTimeout(function(){
 function startGame() { //at the start of the game one the start button is clicked it will hide and 
   
   startButton.classList.add('hide')
-  shuffledQuestions = questions.sort(() => Math.random() - .5)
+  shuffledQuestions = questions.sort(() => Math.random() - .5) // shuffles question random 
 // console.log(shuffledQuestions)
 
   currentQuestionIndex = 0
   questionContainerElement.classList.remove('hide')
   setNextQuestion()
 
-  let count = 10;
+  let count = 15;
 var interval = setInterval(function(){
   document.getElementById('count').innerHTML=count;localStorage
   count--;
   if (count === 0){
     clearInterval(interval);
-    applause();
+    applause(); //plays sound
     
     document.getElementById('count').innerHTML= 'Done!!';
     let elementq = document.getElementById("title");
@@ -169,7 +170,7 @@ function setNextQuestion() {
 }
 // function to show questions upon 
 
-function reset() { 
+function reset() { // THIS FUNCTION IS THE RESETING THE QUESTIONS
   clearStatusClass(document.body)
   nextButton.classList.add('hide')
   while (answerButtonsElement.firstChild) {
@@ -199,13 +200,13 @@ function selectAnswer(e) {
   }
 }
 
-function setStatusClass(element, correct) {
+function setStatusClass(element, correct) { 
   
   
   clearStatusClass(element)
  
-  if (correct) {
-    element.classList.add('correct')
+  if (correct) { 
+    element.classList.add('correct')// USES CLASSLIST STORE IN CSS TO CHANGE THE BACKGROUND OF THE HTML
     console.log("answer is correct ")
    
   }  
@@ -215,8 +216,7 @@ function setStatusClass(element, correct) {
     
   }
 }
-
-function clearStatusClass(element) {
+function clearStatusClass(element) { // CLEAR THE STATUS OF THE BACKGROUND
   element.classList.remove('correct')
   element.classList.remove('wrong')
 }
