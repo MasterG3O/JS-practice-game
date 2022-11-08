@@ -139,7 +139,7 @@ var interval = setInterval(function(){
     let elementq = document.getElementById("title");
     elementq.innerHTML = "Keep Practicing";
     finished()
-
+        //asd
     // location.reload();
     // alert("You're out of time! TRY AGAIN (:");
   }
